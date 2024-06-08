@@ -4,7 +4,7 @@ Metodologi Numeriik Kelas C
 Program tersebut digunakan untuk memecahkan permasalahan berikut:
 1. Durasi waktu belajar (TB) terhadap nilai ujian (Problem 1)
 2. Jumlah latihan soal (NL) terhadap nilai ujian (Problem 2)
-dengan data yang didapat dari link berikut :  https://www.kaggle.com/datasets/nikhil7280/student-performance-multiple-linear-regression
+Dengan data yang didapat dari link berikut :  https://www.kaggle.com/datasets/nikhil7280/student-performance-multiple-linear-regression
 
 Metode yang digunakan untuk penyelesaian masalah tersebut adalah sebagai berikut:
 1. Model Linear
