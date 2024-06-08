@@ -37,16 +37,16 @@ def do_regression_and_plot(data, problem_number):
         NT = data['Performance Index'].values
         
         if problem_number == 1:
-            # Regresi Linear untuk TB terhadap NT
+            #Regresi Linear untuk TB terhadap NT
             params_lin_tb, _ = curve_fit(linear_model, TB, NT)
             m_tb, c_tb = params_lin_tb
             NT_pred_lin_tb = linear_model(TB, m_tb, c_tb)
 
-            # Regresi Eksponensial untuk TB terhadap NT
+            #Regresi Eksponensial untuk TB terhadap NT
             params_exp_tb, _ = curve_fit(exponential_model, TB, NT)
             NT_pred_exp_tb = exponential_model(TB, *params_exp_tb)
 
-            # Regresi Pangkat Sederhana untuk TB terhadap NT
+            #Regresi Pangkat Sederhana untuk TB terhadap NT
             params_pow_tb, _ = curve_fit(power_model, TB, NT)
             NT_pred_pow_tb = power_model(TB, *params_pow_tb)
 
@@ -80,30 +80,30 @@ def do_regression_and_plot(data, problem_number):
             plt.tight_layout()
             plt.show()
 
-            # Menghitung galat RMS
+            #Menghitung galat RMS
             rms_linear_tb = np.sqrt(np.mean((NT - NT_pred_lin_tb) ** 2))
             rms_exponential_tb = np.sqrt(np.mean((NT - NT_pred_exp_tb) ** 2))
             rms_power_tb = np.sqrt(np.mean((NT - NT_pred_pow_tb) ** 2))
 
-            print(f'RMS Error for Linear Regression (TB vs NT): {rms_linear_tb}')
-            print(f'RMS Error for Exponential Regression (TB vs NT): {rms_exponential_tb}')
-            print(f'RMS Error for Power Regression (TB vs NT): {rms_power_tb}')
+            print(f'Galat RMS untuk Regresi Linear (TB vs NT): {rms_linear_tb}')
+            print(f'Galat RMS untuk Regresi Exponensial (TB vs NT): {rms_exponential_tb}')
+            print(f'Galat RMS untuk Regresi Pangkat Sederhana (TB vs NT): {rms_power_tb}')
 
         elif problem_number == 2:
-            # Regresi Linear untuk NL terhadap NT
+            #Regresi Linear untuk NL terhadap NT
             params_lin_nl, _ = curve_fit(linear_model, NL, NT)
             m_nl, c_nl = params_lin_nl
             NT_pred_lin_nl = linear_model(NL, m_nl, c_nl)
 
-            # Regresi Eksponensial untuk NL terhadap NT
+            #Regresi Eksponensial untuk NL terhadap NT
             params_exp_nl, _ = curve_fit(exponential_model, NL, NT)
             NT_pred_exp_nl = exponential_model(NL, *params_exp_nl)
 
-            # Regresi Pangkat Sederhana untuk NL terhadap NT
+            #Regresi Pangkat Sederhana untuk NL terhadap NT
             params_pow_nl, _ = curve_fit(power_model, NL, NT)
             NT_pred_pow_nl = power_model(NL, *params_pow_nl)
 
-            # Plot untuk NL terhadap NT
+            #Plot untuk NL terhadap NT
             plt.figure(figsize=(18, 6))
 
             plt.subplot(1, 3, 1)
@@ -133,14 +133,14 @@ def do_regression_and_plot(data, problem_number):
             plt.tight_layout()
             plt.show()
 
-            # Menghitung galat RMS
+            #Menghitung galat RMS
             rms_linear_nl = np.sqrt(np.mean((NT - NT_pred_lin_nl) ** 2))
             rms_exponential_nl = np.sqrt(np.mean((NT - NT_pred_exp_nl) ** 2))
             rms_power_nl = np.sqrt(np.mean((NT - NT_pred_pow_nl) ** 2))
 
-            print(f'RMS Error for Linear Regression (NL vs NT): {rms_linear_nl}')
-            print(f'RMS Error for Exponential Regression (NL vs NT): {rms_exponential_nl}')
-            print(f'RMS Error for Power Regression (NL vs NT): {rms_power_nl}')
+            print(f'Galat RMS untuk Regresi Linear (NL vs NT): {rms_linear_nl}')
+            print(f'Galat RMS untuk Regresi Exponensial (NL vs NT): {rms_exponential_nl}')
+            print(f'Galat RMS untuk Regresi Pangkat Sederhana (NL vs NT): {rms_power_nl}')
 
 
 #Fungsi yang dipanggil saat tombol "Pilih File" ditekan
